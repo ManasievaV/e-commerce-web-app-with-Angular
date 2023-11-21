@@ -1,0 +1,22 @@
+<div>
+    <h5>ACTIVE ORDER</h5>
+    <div class="row">
+        <div class="col"><ng-template ngFor let-order [ngForOf]="activeOrderData">
+                <th>
+
+                    <label for="">
+                        <input type="checkbox" [checked]=false (change)="selectedItems(order[1])">
+                        {{order[2]}}|
+                    </label>
+
+                </th>
+            </ng-template>
+        </div>
+        <hr>
+        <div class="col d-flex justify-content-end" style="margin:10px">
+            <button class="btn btn-info" (click)="removeItems()">Remove selected
+                Items
+            </button>
+        </div>
+    </div>
+</div>

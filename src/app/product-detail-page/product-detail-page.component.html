@@ -1,0 +1,25 @@
+<div>id: {{ id[1] }}</div>
+<div>ime: {{ id[2] }}</div>
+<div>kolekcija: {{ id[5][0].name }}</div>
+<div>opis: {{ id[3] }}</div>
+<img src="{{id[4][0].preview}} " alt="" width="250px">
+<div>variants:</div>
+<ul>
+    <ng-template ngFor let-variant [ngForOf]="id[6]">
+        <li>
+            {{variant.name}}
+        </li>
+        <li>
+            Price:{{variant.price}}{{variant.currencyCode}}
+        </li>
+        <li>
+            Price after tax:{{variant.priceWithTax}}{{variant.currencyCode}}
+        </li>
+        <li>
+            {{variant.stockLevel}}
+        </li>
+        <hr>
+    </ng-template>
+</ul>
+
+<button class="btn btn-info" (click)="toActiveOrder(id)">Add to Active Order</button>

@@ -1,0 +1,27 @@
+<button class="btn btn-info" style="width: 200px;" (click)="klikni()">SEE ALL ITEMS</button>
+
+<h2>e-commerce shop Total Items {{ totalItems }}</h2>
+<div class="d-flex flex-wrap justify-content-between ">
+
+    <ng-template ngFor let-item [ngForOf]="allItems" class="">
+
+
+        <div class=" shadow p-3 mb-5 bg-white rounded card">
+            <img class="card-img-top" src="{{ item[4][0].preview}}" alt="Card image cap" height="165px">
+            <div class="card-body">
+                <p>id: {{ item[1]}}
+                <h5 class="card-title">{{ item[2]}}</h5>
+                <p class="card-text" style="
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 95%;height: 140px;">
+                    {{ item[3]}}</p>
+                <p style="font-weight: bold;">Collection: {{ item[5][0].name }}
+                    <!-- <a routerLink="/app-product-detail-page" class="btn btn-primary" >Details</a> -->
+                <p class="btn btn-primary" style="width: 100%;" (click)="productDetailClicked(item)">Details
+                </p>
+            </div>
+        </div>
+    </ng-template>
+
+</div>

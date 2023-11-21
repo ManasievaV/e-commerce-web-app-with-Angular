@@ -1,0 +1,1 @@
+export const myUrl = 'https://demo.vendure.io/shop-api';

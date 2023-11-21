@@ -1,0 +1,7 @@
+.card {
+  width: 18rem;
+  margin: 10px;
+}
+.card:hover {
+  border: solid 1px;
+}
